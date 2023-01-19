@@ -24,11 +24,24 @@ module.exports = {
     }
   },
   deleteFlashCardDeck: async (req, res) => {
-    console.log(req.body.deckIdFromJS);
+    console.log(req.params);
     try {
-      await Deck.findOneAndDelete({ _id: req.body.deckIdFromJS });
-      console.log("Deleted FlashCard Deck", req.body);
+      await Deck.findOneAndDelete({ _id: req.params.id });
+      console.log("Deleted FlashCard Deck", req.params.id);
       res.json("Deleted the Flashcard Deck");
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  editFlashCardDeck: async (req, res) => {
+    try {
+      await Deck.findOneAndUpdate(
+        { _id: req.params.id },
+        {
+          deckTitle: req.body.deckTitle,
+          shortDesc: req.body.shortDesc,
+        }
+      );
     } catch (err) {
       console.log(err);
     }
