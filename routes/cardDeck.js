@@ -10,6 +10,7 @@ router.delete(
   "/deleteFlashCardDeck/:id",
   cardDeckController.deleteFlashCardDeck
 );
+router.put("/editFlashCardDeck/:id", cardDeckController.editFlashCardDeck);
 router.get("/flashCardItems", flashCardController.getFlashCards);
 
 module.exports = router;
