@@ -42,6 +42,7 @@ module.exports = {
           shortDesc: req.body.shortDesc,
         }
       );
+      return;
     } catch (err) {
       console.log(err);
     }
