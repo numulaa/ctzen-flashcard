@@ -1,11 +1,19 @@
 const FlashCard = require("../models/Flashcard");
 
 module.exports = {
+  getTheDeck: async (req, res) => {
+    try {
+      const theDeck = await FlashCard.findById(req.params.id);
+    } catch (err) {
+      console.log(err);
+    }
+  },
   getFlashCards: async (req, res) => {
     try {
+      // const allCards = await FlashCard.find({ deckId: req.params.id });
       const allCards = await FlashCard.find({
         userId: req.user.id,
-        // deckId: req.deck._id,
+        deckId: req.params.id,
       });
       // res.render("flashCard.ejs", {
       //   items: allCards,

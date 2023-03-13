@@ -1,7 +1,7 @@
 {
-  "name": "fullstack-template",
+  "name": "ctzen-flashcard",
   "version": "1.0.0",
-  "description": "Starter template for future projects",
+  "description": "An app to help students learn with space repetition",
   "main": "server.js",
   "scripts": {
     "server": "nodemon server.js",

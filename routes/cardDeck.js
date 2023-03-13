@@ -11,6 +11,7 @@ router.delete(
   cardDeckController.deleteFlashCardDeck
 );
 router.put("/editFlashCardDeck/:id", cardDeckController.editFlashCardDeck);
-router.get("/flashCardItems", flashCardController.getFlashCards);
+//get and see all flashcards from a deck
+router.get("/:id", flashCardController.getFlashCards);
 
 module.exports = router;
